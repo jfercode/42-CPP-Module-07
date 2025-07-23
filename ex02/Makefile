@@ -1,12 +1,12 @@
 # Static library name
-NAME		= base
+NAME		= ex02
 
 # Compiler and flags
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 # Directories and files
-SRC			= source/Base.cpp main.cpp
+SRC			= main.cpp
 OBJ			= $(SRC:.cpp=.o)
 
 all:	$(NAME)

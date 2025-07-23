@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Templates.hpp                                      :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaferna2 <jaferna2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 16:58:57 by jaferna2          #+#    #+#             */
-/*   Updated: 2025/07/23 17:10:23 by jaferna2         ###   ########.fr       */
+/*   Created: 2025/07/23 17:12:20 by jaferna2          #+#    #+#             */
+/*   Updated: 2025/07/23 17:19:21 by jaferna2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEMPLATES_HPP
-# define TEMPLATES_HPP
+#ifndef ITER_HPP
+# define ITER_HPP
+
+#pragma once
 
 #include <iostream>
+#include <cstddef>
 
 template <typename T>
-void	swap(T &a, T &b)
+void	iter(T *array, size_t array_length, void (*func)(T &))
 {
-	T temp = a;
-	a = b;
-	b = temp;
+	for (size_t i = 0; i < array_length; ++i)
+		func(array[i]);
 }
-
-template <typename T>
-T		min(T &a, T &b)
-{
-	return ((a < b) ? a : b);
-}
-
-template <typename T>
-T		max(T &a, T &b)
-{
-	return ((a > b) ? a : b);
-}
-
 #endif
