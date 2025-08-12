@@ -24,4 +24,11 @@ void	iter(T *array, size_t array_length, void (*func)(T &))
 	for (size_t i = 0; i < array_length; ++i)
 		func(array[i]);
 }
+
+template <typename T>
+void	iter(T *array, size_t array_length, void (*func)(const T &))
+{
+	for (size_t i = 0; i < array_length; ++i)
+		func(array[i]);
+}
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaferna2 <jaferna2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jaferna2 < jaferna2@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:29:49 by jaferna2          #+#    #+#             */
-/*   Updated: 2025/07/23 17:52:06 by jaferna2         ###   ########.fr       */
+/*   Updated: 2025/08/12 10:13:34 by jaferna2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ class Array
 {
 private:
 	T* 			data;
-	size_t		len;	
+	size_t		len;
 public:
 	Array(void);
 	Array(unsigned int n);
 	Array(const Array &other);
 	~Array(void);
 
-	
 	Array& operator=(const Array &other);
 	T& operator[](size_t index);
 	const T& operator[](size_t index) const;
