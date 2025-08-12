@@ -1,19 +1,77 @@
 # ♻️ CPP Module 07 – C++ Templates
 
-> ✅ **Objetivo**: Dominar el uso de **templates** en C++ para funciones y clases, potenciando la reutilización y flexibilidad del código.
-> ✅ **Nivel**: Avanzado
+> ✅ **Objetivo**: Dominar el uso de **templates** en C++ para funciones y clases, potenciando la reutilización y flexibilidad del código.  
+> ✅ **Nivel**: Avanzado  
 > ✅ **Temas clave**: Templates de funciones, templates de clases, manejo de arrays genéricos, excepciones estándar, operadores de comparación, buenas prácticas de diseño en C++98.
 
 ---
 
 ## 📚 Tabla de Contenidos
 
-1. [Ejercicio 00 – Templates de Funciones Básicas](#ejercicio-00--templates-de-funciones-básicas)
-2. [Ejercicio 01 – Iter](#ejercicio-01--iter)
-3. [Ejercicio 02 – Array Template](#ejercicio-02--array-template)
-4. [Tabla Resumen de Templates](#-tabla-resumen-de-templates)
-5. [Errores Comunes](#-5-errores-comunes)
-6. [Buenas Prácticas](#-6-buenas-prácticas)
+1. [¿Qué son los Templates en C++?](#-qué-son-los-templates-en-c)
+2. [Reglas Generales del Módulo](#-reglas-generales-del-módulo)
+3. [Ejercicio 00 – Templates de Funciones Básicas](#ejercicio-00--templates-de-funciones-básicas)
+4. [Ejercicio 01 – Iter](#ejercicio-01--iter)
+5. [Ejercicio 02 – Array Template](#ejercicio-02--array-template)
+6. [Tabla Resumen de Templates](#-tabla-resumen-de-templates)
+7. [Errores Comunes](#-errores-comunes)
+8. [Buenas Prácticas](#-buenas-prácticas)
+
+---
+
+## ✨ ¿Qué son los Templates en C++?
+
+Los **templates** en C++ permiten escribir código genérico capaz de trabajar con cualquier tipo de dato, incrementando la reutilización y flexibilidad.  
+Son la base de la programación genérica, facilitando que funciones y clases sean independientes del tipo de datos con el que operan.  
+Por ejemplo, un mismo template de función puede servir para intercambiar (`swap`) dos `int`, dos `float` o dos `std::string` sin necesidad de duplicar código.
+
+**Tipos de templates:**
+- **Template de función:** Permite definir una función que acepta parámetros de cualquier tipo.
+- **Template de clase:** Permite definir una clase cuyos miembros pueden operar con cualquier tipo.
+
+**Ventajas de usar templates:**
+- Eliminan duplicación de código.
+- Incrementan la seguridad de tipo en tiempo de compilación.
+- Permiten construir librerías genéricas (como la STL).
+
+Ejemplo simple de template de función:
+```cpp
+template<typename T>
+T max(T a, T b) {
+    return (a > b) ? a : b;
+}
+```
+Ejemplo simple de template de clase:
+```cpp
+template<typename T>
+class Caja {
+    T valor;
+public:
+    Caja(T v) : valor(v) {}
+    T get() const { return valor; }
+};
+```
+
+---
+
+## 🔹 Reglas Generales del Módulo
+
+📘 **Compilación**:
+- Compilar con: `c++ -Wall -Wextra -Werror`
+- El código debe compilar con la flag: `-std=c++98`
+
+📘 **Nomenclatura y Formato**:
+- Directorios: `ex00`, `ex01`, `ex02`, ...
+- Archivos de clases: `ClassName.hpp`/`.h` y `.cpp`/`.tpp` según corresponda.
+- Clases en formato UpperCamelCase.
+- Cada archivo debe tener include guards.
+
+📘 **Restricciones**:
+- Prohibido: C++11/Boost, containers y algoritmos STL (`<vector>`, `<list>`, `<algorithm>`, etc.), funciones `*printf()`, `*alloc()`, y `free()`.
+- Prohibido: `using namespace <ns_name>`, `friend`.
+- Permitido: Funcionalidad estándar de C++98 y uso de templates.
+- Evitar memory leaks (usar `new[]` y `delete[]` apropiadamente).
+- Formato de salida: Toda salida debe terminar con salto de línea.
 
 ---
 
@@ -115,7 +173,7 @@ try {
 
 ---
 
-## 🔹 5. Errores Comunes
+## 🔹 Errores Comunes
 
 ❌ Definir implementación de funciones NO template en headers  
 ❌ Acceder a memoria no asignada o provocar memory leaks  
@@ -126,7 +184,7 @@ try {
 
 ---
 
-## 🔹 6. Buenas Prácticas
+## 🔹 Buenas Prácticas
 
 ✅ Usar `const &` en parámetros para evitar copias innecesarias  
 ✅ Documentar cada template explicando su uso y restricciones  
