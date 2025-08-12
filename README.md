@@ -9,13 +9,12 @@
 ## 📚 Tabla de Contenidos
 
 1. [¿Qué son los Templates en C++?](#-qué-son-los-templates-en-c)
-2. [Reglas Generales del Módulo](#-reglas-generales-del-módulo)
-3. [Ejercicio 00 – Templates de Funciones Básicas](#ejercicio-00--templates-de-funciones-básicas)
-4. [Ejercicio 01 – Iter](#ejercicio-01--iter)
-5. [Ejercicio 02 – Array Template](#ejercicio-02--array-template)
-6. [Tabla Resumen de Templates](#-tabla-resumen-de-templates)
-7. [Errores Comunes](#-errores-comunes)
-8. [Buenas Prácticas](#-buenas-prácticas)
+2. [Ejercicio 00 – Templates de Funciones Básicas](#ejercicio-00--templates-de-funciones-básicas)
+3. [Ejercicio 01 – Iter](#ejercicio-01--iter)
+4. [Ejercicio 02 – Array Template](#ejercicio-02--array-template)
+5. [Tabla Resumen de Templates](#-tabla-resumen-de-templates)
+6. [Errores Comunes](#-errores-comunes)
+7. [Buenas Prácticas](#-buenas-prácticas)
 
 ---
 
@@ -51,27 +50,6 @@ public:
     T get() const { return valor; }
 };
 ```
-
----
-
-## 🔹 Reglas Generales del Módulo
-
-📘 **Compilación**:
-- Compilar con: `c++ -Wall -Wextra -Werror`
-- El código debe compilar con la flag: `-std=c++98`
-
-📘 **Nomenclatura y Formato**:
-- Directorios: `ex00`, `ex01`, `ex02`, ...
-- Archivos de clases: `ClassName.hpp`/`.h` y `.cpp`/`.tpp` según corresponda.
-- Clases en formato UpperCamelCase.
-- Cada archivo debe tener include guards.
-
-📘 **Restricciones**:
-- Prohibido: C++11/Boost, containers y algoritmos STL (`<vector>`, `<list>`, `<algorithm>`, etc.), funciones `*printf()`, `*alloc()`, y `free()`.
-- Prohibido: `using namespace <ns_name>`, `friend`.
-- Permitido: Funcionalidad estándar de C++98 y uso de templates.
-- Evitar memory leaks (usar `new[]` y `delete[]` apropiadamente).
-- Formato de salida: Toda salida debe terminar con salto de línea.
 
 ---
 
